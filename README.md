@@ -1,17 +1,36 @@
-# React + Vite
+# 🌿 Green&Legal - Yuridik Firma Landing Sahifasi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Green&Legal** — bu yuridik firmalar va advokatlar uchun maxsus ishlab chiqilgan zamonaviy, tezkor va to'liq moslashuvchan (responsive) landing page. Loyiha mijozlarni jalb qilish, xizmatlarni taqdim etish va arizalarni to'g'ridan-to'g'ri Telegram botga yuborish imkoniyatini beradi.
 
-Currently, two official plugins are available:
+![Loyiha Skrinshoti](/public/logo.jpg)
+*(Bu yerga keyinchalik saytning to'liq skrinshotini qo'yishingiz mumkin)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Asosiy Xususiyatlar
 
-## React Compiler
+* **⚡ Zamonaviy Texnologiyalar:** React + Vite orqali juda tez ishlaydi.
+* **🌍 Ko'p Tillilik:** O'zbek va Rus tillarini qo'llab-quvvatlaydi (bir tugma orqali almashish).
+* **📱 To'liq Responsive:** Mobil, planshet va kompyuterlarda ideal ko'rinadi.
+* **📩 Telegram Integratsiyasi:** Saytdagi formadan yuborilgan arizalar darhol sizning Telegram botingizga kelib tushadi.
+* **🎨 Zamonaviy Dizayn:** Tailwind CSS yordamida "Green & Premium" uslubidagi dizayn.
+* **✨ Animatsiyalar:** Framer Motion yordamida silliq (smooth) va chiroyli animatsiyalar.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Texnologiyalar
 
-## Expanding the ESLint configuration
+Loyiha quyidagi texnologiyalar asosida qurilgan:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# yuridik-landing
+* [React](https://reactjs.org/) (Vite) - Frontend kutubxonasi.
+* [Tailwind CSS](https://tailwindcss.com/) - Stillar va dizayn uchun.
+* [Framer Motion](https://www.framer.com/motion/) - Animatsiyalar uchun.
+* [Lucide React](https://lucide.dev/) - Zamonaviy ikonka to'plami.
+* Telegram Bot API - Arizalarni qabul qilish uchun.
+
+## 🚀 O'rnatish va Ishga Tushirish
+
+Loyihani kompyuteringizga yuklab olish va ishga tushirish uchun quyidagi qadamlarni bajaring:
+
+### 1. Repozitoriyani klonlash
+Terminalni oching va quyidagi buyruqni yozing:
+
+```bash
+git clone [https://github.com/kamalovicdev-sys/yuridik-landing.git](https://github.com/kamalovicdev-sys/yuridik-landing.git)
+cd yuridik-landing
