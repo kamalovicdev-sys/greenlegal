@@ -5,24 +5,163 @@ import { motion } from 'framer-motion';
 // --- TARJIMALAR LUG'ATI ---
 const translations = {
   uz: {
-    nav: { services: "Xizmatlar", adv: "Afzalliklar", process: "Jarayon", team: "Jamoa", btn: "Konsultatsiya" },
-    hero: { badge: "B2B Yuridik Xizmatlar", title1: "Biznesingizni huquqiy xavflardan", title2: "himoya qiling", desc: "Korxonalarni ro'yxatdan o'tkazish, litsenziyalash va sud jarayonlarida to'liq huquqiy yordam. Barcha yuridik masalalarni professionallarga topshirib, xotirjam ishlang.", btn1: "Bepul tahlil olish" },
-    services: { title: "Biznesingiz uchun yechimlar", desc: "Vaqtingizni tejash va qonuniy xavfsizlikni ta'minlash uchun asosiy xizmatlarimiz", s1Title: "Biznesni ro'yxatdan o'tkazish", s1Desc: "Yangi korxonalarni (MChJ, AJ) ochish va ta'sis hujjatlarini qonuniy rasmiylashtirish.", s2Title: "Litsenziyalash", s2Desc: "Faoliyatingiz uchun zarur bo'lgan litsenziya va ruxsatnomalarni byurokratiyasiz olish.", s3Title: "Sud ishlarida himoya", s3Desc: "Xo'jalik va iqtisodiy nizolarda sudda kompaniyangiz manfaatlarini to'liq himoya qilish.", s4Title: "Yuridik konsultatsiya", s4Desc: "Shartnomalar ekspertizasi va biznes jarayonlarida doimiy professional huquqiy maslahat." },
-    adv: { title: "Nima uchun yuridik ishlarni bizga ishonishadi?", desc: "Biz shunchaki maslahat bermaymiz, balki kompaniyangiz duch kelishi mumkin bo'lgan xavflarning oldini olamiz va amaliy yechimlar taqdim etamiz.", a1Title: "B2B Sektorida chuqur tajriba", a1Desc: "Biz asosan yuridik shaxslar bilan ishlaymiz va korporativ huquqni ich-ichidan bilamiz.", a2Title: "100% Maxfiylik kafolati", a2Desc: "Kompaniyangiz sirlari va moliyaviy ma'lumotlari qat'iy sir saqlanishiga kafolat beramiz.", a3Title: "Tezkorlik va byurokratiyasizlik", a3Desc: "Siz biznes bilan shug'ullanasiz, barcha hujjatbozlik va davlat idoralari bilan ishlashni o'zimiz hal qilamiz." },
-    process: { title: "Biz qanday ishlaymiz?", desc: "Muammongizni qonuniy hal qilish uchun 4 ta oddiy qadam", p1Title: "Ariza qoldirish", p1Desc: "Sayt orqali ariza qoldirasiz yoki bizga qo'ng'iroq qilasiz.", p2Title: "Bepul tahlil", p2Desc: "Yuristimiz holatingizni bepul o'rganib chiqadi va yechim taklif qiladi.", p3Title: "Shartnoma", p3Desc: "Rasmiy shartnoma tuzamiz va barcha mas'uliyatni o'z zimmamizga olamiz.", p4Title: "Natija", p4Desc: "Sizning muammongiz qonuniy, tez va xavfsiz hal etiladi." },
-    team: { title: "Bizning Mutaxassislar", desc: "Sizning manfaatlaringizni ko'p yillik tajribaga ega professionallar himoya qiladi", t1Role: "Katta huquqshunos (Korporativ huquq)", t1Desc: "Biznesni ro'yxatdan o'tkazish va litsenziyalash bo'yicha 10+ yillik tajriba. Yuzlab korxonalarga yuridik maslahat bergan.", t2Role: "Sud ishlari bo'yicha yetakchi advokat", t2Desc: "Iqtisodiy nizolar va sud jarayonlarida yuzlab muvaffaqiyatli keyslar muallifi. Ishonchli himoya kafolati.", t3Title: "Kuchli Jamoa", t3Role: "Sizning biznesingiz uchun", t3Desc: "Bizning jamoamiz turli sohalarga ixtisoslashgan 15 dan ortiq malakali huquqshunoslardan iborat.", t3Badge: "Barcha mutaxassislarimiz" },
-    contact: { title: "Huquqiy maslahat kerakmi?", desc: "Ma'lumotlaringizni qoldiring. Bizning yetakchi yuristlarimiz siz bilan bog'lanib, vaziyatingizni tahlil qilib berishadi. Maxfiylik 100% kafolatlanadi.", fast: "Tezkor aloqa", email: "Elektron manzil", formTitle: "Ariza qoldirish", formName: "Ism yoki Kompaniya nomi", formPhone: "Telefon raqam", formBtn: "Arizani yuborish" },
-    footer: { desc: "Biznesingizning ishonchli huquqiy himoyachisi. Biz bilan muammolar tez va qonuniy hal qilinadi.", address: "Toshkent shahri, Yakkasaroy tumani, Cho'pon ota ko'chasi, 16-uy. ", hours: "Du-Ju: 09:00 - 18:00", rights: "Barcha huquqlar himoyalangan." }
+    nav: {
+       services: "Xizmatlar", 
+       adv: "Afzalliklar", 
+       process: "Jarayon", 
+       team: "Jamoa", 
+       btn: "Konsultatsiya" 
+      },
+    hero: { 
+      badge: "B2B Yuridik Xizmatlar", 
+      title1: "Biznesingizni huquqiy xavflardan", 
+      title2: "himoya qiling", 
+      desc: "Korxonalarni ro'yxatdan o'tkazish, litsenziyalash va sud jarayonlarida to'liq huquqiy yordam. Barcha yuridik masalalarni professionallarga topshirib, xotirjam ishlang.", 
+      btn1: "Bepul tahlil olish" 
+    },
+    services: { 
+      title: "Biznesingiz uchun yechimlar", 
+      desc: "Vaqtingizni tejash va qonuniy xavfsizlikni ta'minlash uchun asosiy xizmatlarimiz", 
+      s1Title: "Biznesni ro'yxatdan o'tkazish", 
+      s1Desc: "Yangi korxonalarni (MChJ, AJ) ochish va ta'sis hujjatlarini qonuniy rasmiylashtirish.", 
+      s2Title: "Litsenziyalash", 
+      s2Desc: "Faoliyatingiz uchun zarur bo'lgan litsenziya va ruxsatnomalarni byurokratiyasiz olish.", 
+      s3Title: "Sud ishlarida himoya", 
+      s3Desc: "Xo'jalik va iqtisodiy nizolarda sudda kompaniyangiz manfaatlarini to'liq himoya qilish.", 
+      s4Title: "Yuridik konsultatsiya", 
+      s4Desc: "Shartnomalar ekspertizasi va biznes jarayonlarida doimiy professional huquqiy maslahat." 
+    },
+    adv: { 
+      title: "Nima uchun yuridik ishlarni bizga ishonishadi?", 
+      desc: "Biz shunchaki maslahat bermaymiz, balki kompaniyangiz duch kelishi mumkin bo'lgan xavflarning oldini olamiz va amaliy yechimlar taqdim etamiz.", 
+      a1Title: "B2B Sektorida chuqur tajriba", 
+      a1Desc: "Biz asosan yuridik shaxslar bilan ishlaymiz va korporativ huquqni ich-ichidan bilamiz.", 
+      a2Title: "100% Maxfiylik kafolati", 
+      a2Desc: "Kompaniyangiz sirlari va moliyaviy ma'lumotlari qat'iy sir saqlanishiga kafolat beramiz.", 
+      a3Title: "Tezkorlik va byurokratiyasizlik", 
+      a3Desc: "Siz biznes bilan shug'ullanasiz, barcha hujjatbozlik va davlat idoralari bilan ishlashni o'zimiz hal qilamiz." 
+    },
+    process: { 
+      title: "Biz qanday ishlaymiz?", 
+      desc: "Muammongizni qonuniy hal qilish uchun 4 ta oddiy qadam", 
+      p1Title: "Ariza qoldirish", 
+      p1Desc: "Sayt orqali ariza qoldirasiz yoki bizga qo'ng'iroq qilasiz.", 
+      p2Title: "Bepul tahlil", 
+      p2Desc: "Yuristimiz holatingizni bepul o'rganib chiqadi va yechim taklif qiladi.", 
+      p3Title: "Shartnoma", 
+      p3Desc: "Rasmiy shartnoma tuzamiz va barcha mas'uliyatni o'z zimmamizga olamiz.", 
+      p4Title: "Natija", 
+      p4Desc: "Sizning muammongiz qonuniy, tez va xavfsiz hal etiladi." 
+    },
+    team: { 
+      title: "Bizning Mutaxassislar", 
+      desc: "Sizning manfaatlaringizni ko'p yillik tajribaga ega professionallar himoya qiladi", 
+      t1Role: "Katta huquqshunos (Korporativ huquq)", 
+      t1Desc: "Biznesni ro'yxatdan o'tkazish va litsenziyalash bo'yicha 10+ yillik tajriba. Yuzlab korxonalarga yuridik maslahat bergan.", 
+      t2Role: "Sud ishlari bo'yicha yetakchi advokat", 
+      t2Desc: "Iqtisodiy nizolar va sud jarayonlarida yuzlab muvaffaqiyatli keyslar muallifi. Ishonchli himoya kafolati.", 
+      t3Title: "Kuchli Jamoa", 
+      t3Role: "Sizning biznesingiz uchun", 
+      t3Desc: "Bizning jamoamiz turli sohalarga ixtisoslashgan 15 dan ortiq malakali huquqshunoslardan iborat.", 
+      t3Badge: "Barcha mutaxassislarimiz" 
+    },
+    contact: { 
+      title: "Huquqiy maslahat kerakmi?", 
+      desc: "Ma'lumotlaringizni qoldiring. Bizning yetakchi yuristlarimiz siz bilan bog'lanib, vaziyatingizni tahlil qilib berishadi. Maxfiylik 100% kafolatlanadi.", 
+      fast: "Tezkor aloqa", 
+      email: "Elektron manzil", 
+      formTitle: "Ariza qoldirish", 
+      formName: "Ism yoki Kompaniya nomi", 
+      formPhone: "Telefon raqam", 
+      formBtn: "Arizani yuborish" 
+    },
+    
+    footer: { 
+      esc: "Biznesingizning ishonchli huquqiy himoyachisi. Biz bilan muammolar tez va qonuniy hal qilinadi.", 
+      address: "Toshkent shahri, Yakkasaroy tumani, Cho'pon ota ko'chasi, 16-uy. ", 
+      hours: "Du-Ju: 09:00 - 18:00", 
+      rights: "Barcha huquqlar himoyalangan." 
+    }
   },
+
+
   ru: {
-    nav: { services: "Услуги", adv: "Преимущества", process: "Процесс", team: "Команда", btn: "Консультация" },
-    hero: { badge: "Юридические услуги B2B", title1: "Защитите свой бизнес от", title2: "правовых рисков", desc: "Регистрация предприятий, лицензирование и полная юридическая поддержка в судебных процессах. Доверьте все юридические вопросы профессионалам и работайте спокойно.", btn1: "Бесплатный анализ" },
-    services: { title: "Решения для вашего бизнеса", desc: "Основные услуги для экономии вашего времени и обеспечения юридической безопасности", s1Title: "Регистрация бизнеса", s1Desc: "Открытие новых предприятий (ООО, АО) и законное оформление учредительных документов.", s2Title: "Лицензирование", s2Desc: "Получение необходимых лицензий и разрешений для вашей деятельности без бюрократии.", s3Title: "Защита в суде", s3Desc: "Полная защита интересов вашей компании в суде по хозяйственным и экономическим спорам.", s4Title: "Юридическая консультация", s4Desc: "Экспертиза договоров и постоянные профессиональные юридические консультации в бизнес-процессах." },
-    adv: { title: "Почему юридические дела доверяют нам?", desc: "Мы не просто консультируем, мы предотвращаем риски, с которыми может столкнуться ваша компания, и предлагаем практические решения.", a1Title: "Глубокий опыт в B2B секторе", a1Desc: "Мы работаем в основном с юридическими лицами и знаем корпоративное право изнутри.", a2Title: "100% Гарантия конфиденциальности", a2Desc: "Мы гарантируем строгую конфиденциальность секретов вашей компании и финансовой информации.", a3Title: "Оперативность и без бюрократии", a3Desc: "Вы занимаетесь бизнесом, а всю работу с документами и государственными органами мы берем на себя." },
-    process: { title: "Как мы работаем?", desc: "4 простых шага для законного решения вашей проблемы", p1Title: "Оставить заявку", p1Desc: "Вы оставляете заявку на сайте или звоните нам.", p2Title: "Бесплатный анализ", p2Desc: "Наш юрист бесплатно изучит вашу ситуацию и предложит решение.", p3Title: "Договор", p3Desc: "Мы заключаем официальный договор и берем на себя всю ответственность.", p4Title: "Результат", p4Desc: "Ваша проблема будет решена законно, быстро и безопасно." },
-    team: { title: "Наши специалисты", desc: "Ваши интересы защищают профессионалы с многолетним опытом", t1Role: "Старший юрист (Корпоративное право)", t1Desc: "Более 10 лет опыта в регистрации бизнеса и лицензировании. Проконсультировал сотни предприятий.", t2Role: "Ведущий адвокат по судебным делам", t2Desc: "Автор сотен успешных кейсов в экономических спорах и судебных процессах. Гарантия надежной защиты.", t3Title: "Сильная команда", t3Role: "Для вашего бизнеса", t3Desc: "Наша команда состоит из более чем 15 квалифицированных юристов, специализирующихся в различных областях.", t3Badge: "Все специалисты" },
-    contact: { title: "Нужна юридическая консультация?", desc: "Оставьте свои данные. Наши ведущие юристы свяжутся с вами и проанализируют вашу ситуацию. 100% конфиденциальность гарантирована.", fast: "Быстрая связь", email: "Электронная почта", formTitle: "Оставить заявку", formName: "Имя или название компании", formPhone: "Номер телефона", formBtn: "Отправить заявку" },
-    footer: { desc: "Надежный правовой защитник вашего бизнеса. С нами проблемы решаются быстро и законно.", address: "г. Ташкент, Яккасарайский район, улица Чупан-ота, дом 16.", hours: "Пн-Пт: 09:00 - 18:00", rights: "Все права защищены." }
+    nav: { 
+      services: "Услуги", 
+      adv: "Преимущества", 
+      process: "Процесс", 
+      team: "Команда", 
+      btn: "Консультация" 
+    },
+    hero: { 
+      badge: "Юридические услуги B2B", 
+      title1: "Защитите свой бизнес от", 
+      title2: "правовых рисков", 
+      desc: "Регистрация предприятий, лицензирование и полная юридическая поддержка в судебных процессах. Доверьте все юридические вопросы профессионалам и работайте спокойно.", 
+      btn1: "Бесплатный анализ" 
+    },
+    services: { 
+      title: "Решения для вашего бизнеса", 
+      desc: "Основные услуги для экономии вашего времени и обеспечения юридической безопасности", 
+      s1Title: "Регистрация бизнеса", 
+      s1Desc: "Открытие новых предприятий (ООО, АО) и законное оформление учредительных документов.", 
+      s2Title: "Лицензирование", 
+      s2Desc: "Получение необходимых лицензий и разрешений для вашей деятельности без бюрократии.", 
+      s3Title: "Защита в суде", 
+      s3Desc: "Полная защита интересов вашей компании в суде по хозяйственным и экономическим спорам.", 
+      s4Title: "Юридическая консультация", 
+      s4Desc: "Экспертиза договоров и постоянные профессиональные юридические консультации в бизнес-процессах." 
+    },
+    adv: { 
+      title: "Почему юридические дела доверяют нам?", 
+      desc: "Мы не просто консультируем, мы предотвращаем риски, с которыми может столкнуться ваша компания, и предлагаем практические решения.", 
+      a1Title: "Глубокий опыт в B2B секторе", 
+      a1Desc: "Мы работаем в основном с юридическими лицами и знаем корпоративное право изнутри.", 
+      a2Title: "100% Гарантия конфиденциальности", 
+      a2Desc: "Мы гарантируем строгую конфиденциальность секретов вашей компании и финансовой информации.", 
+      a3Title: "Оперативность и без бюрократии", 
+      a3Desc: "Вы занимаетесь бизнесом, а всю работу с документами и государственными органами мы берем на себя." 
+    },
+    process: { 
+      title: "Как мы работаем?", 
+      desc: "4 простых шага для законного решения вашей проблемы", 
+      p1Title: "Оставить заявку", 
+      p1Desc: "Вы оставляете заявку на сайте или звоните нам.", 
+      p2Title: "Бесплатный анализ", 
+      p2Desc: "Наш юрист бесплатно изучит вашу ситуацию и предложит решение.", 
+      p3Title: "Договор", 
+      p3Desc: "Мы заключаем официальный договор и берем на себя всю ответственность.", 
+      p4Title: "Результат", 
+      p4Desc: "Ваша проблема будет решена законно, быстро и безопасно." 
+    },
+    team: { 
+      title: "Наши специалисты", 
+      desc: "Ваши интересы защищают профессионалы с многолетним опытом", 
+      t1Role: "Старший юрист (Корпоративное право)", 
+      t1Desc: "Более 10 лет опыта в регистрации бизнеса и лицензировании. Проконсультировал сотни предприятий.", 
+      t2Role: "Ведущий адвокат по судебным делам", 
+      t2Desc: "Автор сотен успешных кейсов в экономических спорах и судебных процессах. Гарантия надежной защиты.", 
+      t3Title: "Сильная команда", 
+      t3Role: "Для вашего бизнеса", 
+      t3Desc: "Наша команда состоит из более чем 15 квалифицированных юристов, специализирующихся в различных областях.", 
+      t3Badge: "Все специалисты" 
+    },
+    contact: { 
+      title: "Нужна юридическая консультация?", 
+      desc: "Оставьте свои данные. Наши ведущие юристы свяжутся с вами и проанализируют вашу ситуацию. 100% конфиденциальность гарантирована.", 
+      fast: "Быстрая связь", 
+      email: "Электронная почта", 
+      formTitle: "Оставить заявку", 
+      formName: "Имя или название компании", 
+      formPhone: "Номер телефона", 
+      formBtn: "Отправить заявку" 
+    },
+    footer: { 
+      desc: "Надежный правовой защитник вашего бизнеса. С нами проблемы решаются быстро и законно.", 
+      address: "г. Ташкент, Яккасарайский район, улица Чупан-ота, дом 16.", 
+      hours: "Пн-Пт: 09:00 - 18:00", 
+      rights: "Все права защищены." 
+    }
   }
 };
 
@@ -36,7 +175,7 @@ const LandingPage = () => {
 
   const t = translations[lang];
 
-  // TELEGRAM BOT SOZLAMALARI (BotFather va GetMyId botlaridan olingan ma'lumotlarni shu yerga qo'ying)
+  // TELEGRAM BOT SOZLAMALARI 
   const BOT_TOKEN = "8014966765:AAFsBpsRbdta0YymF2Vd9UjIZGGB9IKZ-zs"; 
   const CHAT_ID = "5791278544";
 
@@ -54,7 +193,7 @@ const LandingPage = () => {
     setLang(lang === 'uz' ? 'ru' : 'uz');
   };
 
-  // Telegramga yuborish funksiyasi
+  // Telegramga xabar yuborish funksiyasi
   const sendToTelegram = async (e) => {
     e.preventDefault();
     setStatus('loading');
