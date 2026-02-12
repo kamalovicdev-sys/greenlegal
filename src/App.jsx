@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Scale, FileText, ShieldCheck, Briefcase, ChevronRight, Phone, CheckCircle, Users, MapPin, Mail, Clock, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -175,9 +175,32 @@ const LandingPage = () => {
 
   const t = translations[lang];
 
+  // Saytga kirganda "visit" deb Google Sheetga yozish
+  useEffect(() => {
+    const trackVisit = async () => {
+      try {
+        // Oldin yozilmagan bo'lsa (Session Storage)
+        if (!sessionStorage.getItem('visited')) {
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Muhim!
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ type: 'visit' })
+          });
+          sessionStorage.setItem('visited', 'true'); // Qayta-qayta sanamaslik uchun
+        }
+      } catch (error) {
+        console.error("Statistika xatosi:", error);
+      }
+    };
+    trackVisit();
+  }, []);
+
   // TELEGRAM BOT SOZLAMALARI 
   const BOT_TOKEN = "8014966765:AAFsBpsRbdta0YymF2Vd9UjIZGGB9IKZ-zs"; 
   const CHAT_ID = "5791278544";
+
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwoUMJGg6enEuzs_HlBi98pXY57_f9FztRcT1oUh-_TimUVIkauBxVIdislmsG0UJ2AAQ/exec";
 
   // Animatsiya sozlamalari
   const fadeInUp = {
@@ -201,7 +224,8 @@ const LandingPage = () => {
     const message = `Yangi ariza (Green&Legal) 🌿\n\n👤 Ism: ${formData.name}\n📞 Telefon: ${formData.phone}`;
 
     try {
-      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      // 1. Telegramga yuborish
+      const telegramResponse = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -210,7 +234,19 @@ const LandingPage = () => {
         }),
       });
 
-      if (response.ok) {
+      // 2. Google Sheetga statistika uchun yuborish (Backend sifatida)
+      if (telegramResponse.ok) {
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            type: 'lead', 
+            name: formData.name, 
+            phone: formData.phone 
+          })
+        });
+
         setStatus('success');
         setFormData({ name: '', phone: '' });
         setTimeout(() => setStatus('idle'), 3000);
